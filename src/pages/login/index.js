@@ -1,21 +1,20 @@
+import React from "react";
 import Container from "../../components/templates/structures/container";
 import Header from "../../components/templates/structures/header";
-import Welcome from "../../components/home/welcome";
 import Title from "../../components/templates/structures/title";
-import ButtonEnter from "../../components/templates/buttons/ButtonEnter";
+import Login from "../../components/home/login";
 
-function Home() {
-	const title = "Le Tour Cycliste";
+function LoginPage() {
+	const title = "Login";
 
 	return (
 		<Container>
 			<Header>
-				<Title styles='my-5' title={title}/>
+				<Title styles='my-5' title={title} />
 			</Header>
-			<Welcome />
-			<ButtonEnter />
+			<Login />
 		</Container>
 	);
 }
 
-export default Home;
+export default LoginPage;

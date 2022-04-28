@@ -6,37 +6,34 @@ import {
 } from "react-router-dom";
 import Background from "../components/templates/background";
 import Home from "../pages/home";
-import { useSelector } from "react-redux";
+import LoginPage from "../pages/login";
 
 function AppRoutes() {
-	const userId = useSelector(
-		(state) => state.user.userId
-	);
-
 	return (
 		<Router>
-			{userId > 0 ? (
-				<Background>
-					<Routes>
-						<Route
-							path='/'
-							element={<Navigate to='/home' />}
-							exact
-						></Route>
+			<Background>
+				<Routes>
+					<Route
+						path='/'
+						element={<Navigate to='/login' />}
+						exact
+					/>
 
-						{/* Home */}
-						<Route
-							path={`/home`}
-							element={Home}
-							exact
-						/>
+					{/* Home */}
+					<Route
+						path={`/home`}
+						element={<Home />}
+						exact
+					/>
 
-						{/* Login */}
-					</Routes>
-				</Background>
-			) : (
-				<Background>Login Component TODO</Background>
-			)}
+					{/* Login */}
+					<Route
+						path={`/login`}
+						element={<LoginPage />}
+						exact
+					/>
+				</Routes>
+			</Background>
 		</Router>
 	);
 }
