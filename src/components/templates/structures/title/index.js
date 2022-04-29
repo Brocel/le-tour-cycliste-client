@@ -2,9 +2,7 @@ import React from "react";
 
 function Title(props) {
 	return (
-		<h1
-			className={`${props.styles} col p-0 h2 font-weight-light`}
-		>
+		<h1 className={`${props.styles}`}>
 			{props.title}
 		</h1>
 	);

@@ -6,10 +6,7 @@ function Form(props) {
 	}
 
 	return (
-		<form
-			onSubmit={formHandler}
-			className={`row mb-1 mt-1`}
-		>
+		<form onSubmit={formHandler}>
 			{props.children}
 		</form>
 	);

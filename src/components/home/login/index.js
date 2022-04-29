@@ -4,9 +4,9 @@ import { Navigate } from "react-router-dom";
 import FormContainer from "../../templates/structures/container/formContainer";
 import Form from "../../templates/forms/Form";
 import Input from "../../templates/forms/Input";
-import SumbitButton from "../../templates/forms/SubmitButton";
+import SumbitButton from "../../templates/buttons/SubmitButton";
 
-function Login() {
+function Login(props) {
 	const dispatch = useDispatch();
 	const [inputValue, setInputValue] = useState("");
 
@@ -59,22 +59,27 @@ function Login() {
 		<>
 			<FormContainer>
 				<Form>
-					<div className={`col w-100 input-group`}>
-						<label>User Name: </label>
-						<Input
-							id='name'
-							pattern='[a-zA-z0-9]*'
-							maxLength='10'
-							type='text'
-							placeholder='Enter Your Name'
-							onChange={updateInputValue}
-							onKeyDown={handleOnKeyDown}
-							value={inputValue}
-						/>
-						<SumbitButton
-							onClick={handleOnClick}
-							buttonText='Login'
-						/>
+					<div className={`col w-100`}>
+						<div className={`row justify-content-center align-items-center`}>
+							<Input
+								id='name'
+								pattern='[a-zA-z0-9]*'
+								maxLength='10'
+								type='text'
+								placeholder='Enter Your Name'
+								onChange={updateInputValue}
+								onKeyDown={handleOnKeyDown}
+								value={inputValue}
+							/>
+						</div>
+						<div
+							className={`row justify-content-center align-items-center`}
+						>
+							<SumbitButton
+								onClick={handleOnClick}
+								buttonText='Login'
+							/>
+						</div>
 					</div>
 				</Form>
 			</FormContainer>

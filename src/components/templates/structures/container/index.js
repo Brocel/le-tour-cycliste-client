@@ -1,6 +1,6 @@
 function Container(props) {
 	return (
-		<main className={`w-100 h-100 m-0`}>
+		<main className={`${props.styles} h-100 m-0`}>
 			{props.children}
 		</main>
 	);

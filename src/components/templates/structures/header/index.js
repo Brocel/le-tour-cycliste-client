@@ -2,11 +2,9 @@ import React from "react";
 
 function Header(props) {
 	return (
-		<header
-			className={`${props.styles} row w-100 m-0 justify-content-between align-items-center`}
-		>
-			{props.children}
-		</header>
+		<div className={`row w-100 ${props.styles}`}>
+			<div className={``}>{props.children}</div>
+		</div>
 	);
 }
 

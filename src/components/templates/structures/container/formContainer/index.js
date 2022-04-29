@@ -1,6 +1,8 @@
 function FormContainer(props) {
 	return (
-		<div className={`form-group p-0 ${props.styles}`}>
+		<div
+			className={`form-group p-0 ${props.styles}`}
+		>
 			{props.children}
 		</div>
 	);

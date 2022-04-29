@@ -1,7 +1,9 @@
+import classes from "./style.module.css";
+
 function SumbitButton(props) {
 	return (
 		<button
-			className={`input-group-text bg-transparent border-left-0 rounded-right`}
+			className={`${classes.button} input-group-text`}
 			onClick={props.onClick}
 		>
 			{props.buttonText}
