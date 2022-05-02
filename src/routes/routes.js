@@ -5,6 +5,7 @@ import {
 	Navigate,
 } from "react-router-dom";
 import Background from "../components/templates/background";
+import NavBar from "../components/navbar";
 import Home from "../pages/home";
 import LoginPage from "../pages/login";
 
@@ -12,6 +13,7 @@ function AppRoutes() {
 	return (
 		<Router>
 			<Background>
+				<NavBar />
 				<Routes>
 					<Route
 						path='/'

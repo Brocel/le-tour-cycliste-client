@@ -1,6 +1,8 @@
 import { React, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import { saveSessionStorage } from "../../../services/sessionStorageService";
+import { User } from "../../../models/User";
 import FormContainer from "../../templates/structures/container/formContainer";
 import Form from "../../templates/forms/Form";
 import Input from "../../templates/forms/Input";
@@ -18,6 +20,20 @@ function Login(props) {
 		(state) => state.user.name
 	);
 
+	const saveUserState = () => {
+		let id = Math.floor(Math.random() * 100 + 1);
+
+		dispatch({
+			type: "USER_IS_CONNECTED",
+			userName: inputValue,
+			userId: id,
+		});
+
+		let user = new User(id, inputValue);
+
+		saveSessionStorage("user", user);
+	};
+
 	const updateInputValue = (event) => {
 		const inputGoal = event.target.validity.valid
 			? event.target.value
@@ -28,20 +44,12 @@ function Login(props) {
 	const handleOnKeyDown = (event) => {
 		var code = event.keyCode || event.charCode;
 		if (code === 13) {
-			dispatch({
-				type: "USER_IS_CONNECTED",
-				userName: inputValue,
-				userId: Math.floor(Math.random() * 100 + 1),
-			});
+			saveUserState();
 		}
 	};
 
 	const handleOnClick = () => {
-		dispatch({
-			type: "USER_IS_CONNECTED",
-			userName: inputValue,
-			userId: Math.floor(Math.random() * 100 + 1),
-		});
+		saveUserState();
 	};
 
 	if (
@@ -60,7 +68,9 @@ function Login(props) {
 			<FormContainer>
 				<Form>
 					<div className={`col w-100`}>
-						<div className={`row justify-content-center align-items-center`}>
+						<div
+							className={`row justify-content-center align-items-center`}
+						>
 							<Input
 								id='name'
 								pattern='[a-zA-z0-9]*'
