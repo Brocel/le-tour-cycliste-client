@@ -1,12 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { getSessionStorage } from "../../../services/sessionStorageService";
+import { User } from "../../../models/User";
 
 function Welcome(props) {
-	const userName = useSelector(
-		(state) => state.user.name
-	);
+	
+	const user = getSessionStorage("user");
 
-	return <h2>Bienvenue sur le Tour, {userName} !</h2>;
+	return <h2>Bienvenue sur le Tour, {user.name} !</h2>;
 }
 
 export default Welcome;
