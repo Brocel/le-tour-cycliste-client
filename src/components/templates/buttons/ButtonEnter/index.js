@@ -1,11 +1,12 @@
 import React from "react";
+import classes from "./style.module.css";
 
 function ButtonEnter(props) {
 	return (
 		<div>
 			<button
-				onClick={props.onclick}
-				className={`btn m-1 text-uppercase text-center`}
+			className={`${classes.button} input-group-text text-uppercase`}
+			onClick={props.onClick}
 			>
 				Entrer
 			</button>

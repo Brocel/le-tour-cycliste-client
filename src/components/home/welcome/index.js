@@ -1,9 +1,10 @@
 import React from "react";
+import { getSessionStorage } from "../../../services/sessionStorageService";
 
 function Welcome(props) {
-	return (
-		<h2>Bienvenue sur le Tour, {props.userName} !</h2>
-	);
+	const user = getSessionStorage("user");
+
+	return <h2>Bienvenue sur le Tour, {user.name} !</h2>;
 }
 
 export default Welcome;

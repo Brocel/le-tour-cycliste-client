@@ -1,22 +1,29 @@
-import Container from "../../components/structures/container";
-import Header from "../../components/structures/header";
+import React from "react";
+import classes from "./style.module.css";
+import Container from "../../components/templates/structures/container";
 import Welcome from "../../components/home/welcome";
-import Title from "../../components/structures/title";
+import ButtonEnter from "../../components/templates/buttons/ButtonEnter";
 
 function Home() {
-	const title = "Le Tour Cycliste";
-	const userName = "Laurent Jalabert";
-
 	return (
-		<>
-			<Container>
-				<Header>
-					<Title styles='my-5' title={title}></Title>
-				</Header>
-				<Welcome userName={userName}></Welcome>
-				<ButtonEnter />
-			</Container>
-		</>
+		<Container styles={`${classes.homeContainer}`}>
+			<div
+				className={`${classes.homeElement} p-3 rounded`}
+			>
+				<div className={`col w-100`}>
+					<div
+						className={`row justify-content-center align-items-center`}
+					>
+						<Welcome />
+					</div>
+					<div
+						className={`row justify-content-center align-items-center`}
+					>
+						<ButtonEnter />
+					</div>
+				</div>
+			</div>
+		</Container>
 	);
 }
 

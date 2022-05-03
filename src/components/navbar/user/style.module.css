@@ -1,0 +1,31 @@
+.user button {
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  color: var(--color-text-secondary);
+  background-color: var(--bkg-ligth3-color);
+}
+
+.user button:hover {
+  background-color: var(--bkg-mid3-color);
+}
+
+.menu {
+  background-color: var(--bkg-ligth1-color);
+}
+
+.menu h4 {
+  color: var(--color-text-secondary);
+  font-weight: bold;
+  text-align: center;
+}
+
+.menu h5, small {
+  color: var(--color-text-secondary);
+  margin-top: 1em;
+  margin-left: 0.5em;
+}
+
+.menu small {
+  color: var(--color-text-secondary);
+}
