@@ -1,7 +1,7 @@
 .button {
   background-color: var(--first-color);
   border: 2px solid var(--first-border-color);
-  margin: 1em;
+  margin-top: 3em;
 }
 
 .button:hover {

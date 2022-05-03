@@ -5,7 +5,7 @@ let userName;
 
 if (getSessionStorage("user")) {
 	userId = getSessionStorage("user").id;
-	userName = getSessionStorage("user").id;
+	userName = getSessionStorage("user").name;
 } else {
 	userId = 0;
 	userName = "";

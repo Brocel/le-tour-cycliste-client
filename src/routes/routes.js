@@ -9,11 +9,10 @@ import NavBar from "../components/navbar";
 import Home from "../pages/home";
 import LoginPage from "../pages/login";
 import { getSessionStorage } from "../services/sessionStorageService";
-import { User } from "../models/User";
 
 function AppRoutes() {
-	let user = new User(0, "");
 	let isConnected = false;
+	let user;
 
 	if (getSessionStorage("user")) {
 		user = getSessionStorage("user");
@@ -23,7 +22,7 @@ function AppRoutes() {
 	return (
 		<Router>
 			<Background>
-				<NavBar />
+				<NavBar user={user}/>
 				<Routes>
 					{isConnected ? (
 						<Route

@@ -20,6 +20,9 @@
   --second-color:#B0BBBF;
   --second-hover-color:#99B5BF;
   --second-border-color:#86B0BF;
+  --color-text-primary:#262829;
+  --color-text-secondary:#6B5A2F;
+  --color-text-tertiary:#738A71;
 }
 
 #root {

@@ -9,7 +9,7 @@ function LoginPage() {
 
 	return (
 		<Container styles={`${classes.loginContainer}`}>
-			<div className={`${classes.loginElement} p-5 rounded`}>
+			<div className={`${classes.loginElement} p-2 rounded`}>
 				<Title
 					styles={`${classes.title}`}
 					title={title}

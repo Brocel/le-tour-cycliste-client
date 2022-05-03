@@ -1,28 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import bikeLogo from "../../assets/images/icons/bike-icon.png";
-import { getSessionStorage } from "../../services/sessionStorageService";
 import classes from "./style.module.css";
 import UserComp from "./user";
 
 function NavBar(props) {
-	const [isConnected, setIsConnected] =
-		useState(false);
-	const [showMenu, setShowMenu] = useState(false);
-	let user;
+	const [user, setUser] = useState();
 
 	useEffect(() => {
-		if (getSessionStorage("user")) {
-			user = getSessionStorage("user");
-			setIsConnected(true);
-		} else {
-			setIsConnected(false);
+		if (props.user !== undefined) {
+			setUser(props.user);
 		}
-	}, [user]);
-
-	function menuButtonHandler() {
-		setShowMenu(showMenu ? false : true);
-	}
+	}, [props.user]);
 
 	return (
 		<>
@@ -31,7 +20,12 @@ function NavBar(props) {
 				expand='lg'
 				className={`${classes.navbar}`}
 			>
-				<Navbar.Brand href='/'>
+				<Navbar.Brand
+					href='/'
+					style={{
+						color: "var(--color-text-secondary)",
+					}}
+				>
 					<img
 						src={bikeLogo}
 						alt='Logo'
@@ -41,6 +35,10 @@ function NavBar(props) {
 					/>{" "}
 					Le Tour Cycliste
 				</Navbar.Brand>
+				<Navbar.Toggle />
+				<Navbar.Collapse className='justify-content-end'>
+					<UserComp user={user} />
+				</Navbar.Collapse>
 			</Navbar>
 		</>
 	);
