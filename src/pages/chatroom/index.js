@@ -14,9 +14,6 @@ function ChatRoom() {
 			<div
 				className={`${classes.chatroomElement}`}
 			></div>
-			<div
-				className={`${classes.chatroomElement}`}
-			></div>
 		</Container>
 	);
 }
