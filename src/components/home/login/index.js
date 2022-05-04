@@ -1,6 +1,6 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { saveSessionStorage } from "../../../services/sessionStorageService";
 import { User } from "../../../models/User";
 import FormContainer from "../../templates/structures/container/formContainer";
@@ -9,16 +9,20 @@ import Input from "../../templates/forms/Input";
 import SumbitButton from "../../templates/buttons/SubmitButton";
 
 function Login(props) {
+	let navigate = useNavigate();
+
 	const dispatch = useDispatch();
 	const [inputValue, setInputValue] = useState("");
 
 	const userIsConnected = useSelector(
 		(state) => state.user.userIsConnected
 	);
-	const userId = useSelector((state) => state.user.id);
-	const userName = useSelector(
-		(state) => state.user.name
-	);
+
+	useEffect(() => {
+		if (userIsConnected !== 0) {
+			navigate("/home");
+		}
+	}, [userIsConnected, navigate]);
 
 	const saveUserState = () => {
 		let id = Math.floor(Math.random() * 100 + 1);
@@ -51,17 +55,6 @@ function Login(props) {
 	const handleOnClick = () => {
 		saveUserState();
 	};
-
-	if (
-		userIsConnected !== 0 &&
-		userId !== 0 &&
-		userName !== ""
-	) {
-		console.log("userIsConnected: " + userIsConnected);
-		console.log("userId: " + userId);
-		console.log("userName: " + userName);
-		return <Navigate to='/home' />;
-	}
 
 	return (
 		<>

@@ -37,6 +37,9 @@ function UserComp(props) {
 				<h5>
 					<small>Profil</small>
 				</h5>
+				<h5>
+					<button onClick={props.onClick}>Logout</button>
+				</h5>
 			</div>
 		</div>
 	);

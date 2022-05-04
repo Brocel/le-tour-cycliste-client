@@ -13,17 +13,15 @@ import { getSessionStorage } from "../services/sessionStorageService";
 
 function AppRoutes() {
 	let isConnected = false;
-	let user;
 
 	if (getSessionStorage("user")) {
-		user = getSessionStorage("user");
 		isConnected = true;
 	}
 
 	return (
 		<Router>
 			<Background>
-				<NavBar user={user} />
+				<NavBar />
 				<Routes>
 					{isConnected ? (
 						<Route
