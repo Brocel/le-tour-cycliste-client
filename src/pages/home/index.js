@@ -1,10 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import classes from "./style.module.css";
 import Container from "../../components/templates/structures/container";
 import Welcome from "../../components/home/welcome";
 import ButtonEnter from "../../components/templates/buttons/ButtonEnter";
 
 function Home() {
+	let navigate = useNavigate();
+
+	const handleOnClick = () => {
+		navigate("/chatroom");
+	};
+
 	return (
 		<Container styles={`${classes.homeContainer}`}>
 			<div
@@ -19,7 +26,7 @@ function Home() {
 					<div
 						className={`row justify-content-center align-items-center`}
 					>
-						<ButtonEnter />
+						<ButtonEnter onClick={handleOnClick} />
 					</div>
 				</div>
 			</div>

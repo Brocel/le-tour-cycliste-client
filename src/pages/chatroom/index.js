@@ -1,19 +1,14 @@
 import React from "react";
 import classes from "./style.module.css";
 import Container from "../../components/templates/structures/container";
+import Join from "../../components/chatroom/join";
+import Chat from "../../components/chatroom/chat";
 
 function ChatRoom() {
 	return (
 		<Container styles={`${classes.chatroomContainer}`}>
-			<div
-				className={`${classes.chatroomElement}`}
-			></div>
-			<div
-				className={`${classes.chatroomElement}`}
-			></div>
-			<div
-				className={`${classes.chatroomElement}`}
-			></div>
+			<Join styles={`${classes.joinElement}`} />
+			<Chat styles={`${classes.chatElement}`} />
 		</Container>
 	);
 }

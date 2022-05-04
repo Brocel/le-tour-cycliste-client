@@ -1,0 +1,21 @@
+.chatroomContainer {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  "join chat";
+}
+
+.joinElement {
+  grid-area: join;
+  border: solid 2px var(--second-border-color);
+}
+
+.chatElement {
+  grid-area: chat;
+  border: solid 2px var(--second-border-color);
+}

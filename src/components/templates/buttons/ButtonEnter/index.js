@@ -5,8 +5,8 @@ function ButtonEnter(props) {
 	return (
 		<div>
 			<button
-			className={`${classes.button} input-group-text text-uppercase`}
-			onClick={props.onClick}
+				className={`${classes.button} input-group-text text-uppercase`}
+				onClick={props.onClick}
 			>
 				Entrer
 			</button>

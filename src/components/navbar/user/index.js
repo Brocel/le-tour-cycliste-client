@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./style.module.css";
 
 function UserComp(props) {
@@ -14,7 +14,7 @@ function UserComp(props) {
 	}
 
 	return (
-		<div className={`${classes.user}`}>
+		<div className={`${classes.user}`} id={id}>
 			<button
 				className='btn justify-content-center shadow-none'
 				type='button'
