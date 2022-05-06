@@ -1,5 +1,6 @@
 .navbar {
   align-items: center;
+  border: solid 2px var(--bkg-dark2-color);
 }
 
 .mainContainer {

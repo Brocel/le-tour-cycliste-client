@@ -1,0 +1,13 @@
+.joinContainer {
+  background-color: var(--bkg-ligth2-color);
+  padding: 2%;
+  width: fit-content;
+  text-align: center;
+  border: solid 2px var(--bkg-dark2-color);
+  border-radius: 10%;
+}
+
+.joinTitle {
+  font-weight: bold;
+  color: var(--bkg-dark2-color);
+}

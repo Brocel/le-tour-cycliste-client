@@ -1,20 +1,7 @@
-import { getSessionStorage } from "../../services/sessionStorageService";
-
-let userId;
-let userName;
-
-if (getSessionStorage("user")) {
-	userId = getSessionStorage("user").id;
-	userName = getSessionStorage("user").name;
-} else {
-	userId = 0;
-	userName = "";
-}
-
 const INITIAL_STATE = {
 	userIsConnected: 0,
-	id: userId,
-	name: userName,
+	id: 0,
+	name: "",
 };
 
 function userReducer(state = INITIAL_STATE, action) {

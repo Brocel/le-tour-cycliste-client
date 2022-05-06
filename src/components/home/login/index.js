@@ -25,17 +25,21 @@ function Login(props) {
 	}, [userIsConnected, navigate]);
 
 	const saveUserState = () => {
-		let id = Math.floor(Math.random() * 100 + 1);
 
-		dispatch({
-			type: "USER_IS_CONNECTED",
-			userName: inputValue,
-			userId: id,
-		});
+		if(inputValue !== "") {
+			let id = Math.floor(Math.random() * 100 + 1);
 
-		let user = new User(id, inputValue);
-
-		saveSessionStorage("user", user);
+			dispatch({
+				type: "USER_IS_CONNECTED",
+				userName: inputValue,
+				userId: id,
+			});
+	
+			let user = new User(id, inputValue);
+	
+			saveSessionStorage("user", user);
+		}
+		
 	};
 
 	const updateInputValue = (event) => {

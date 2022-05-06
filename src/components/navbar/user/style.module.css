@@ -12,6 +12,19 @@
 
 .menu {
   background-color: var(--bkg-ligth1-color);
+  border: solid 2px var(--bkg-dark2-color);
+}
+
+.menu button {
+  border-radius: 15%;
+  width: fit-content;
+  height: 3em;
+  color: var(--color-text-secondary);
+  font-weight: bold;
+  background-color: var(--bkg-ligth3-color);
+  margin-top: 1em;
+  margin-left: 0.5em;
+  border: solid 1px var(--bkg-dark2-color);
 }
 
 .menu h4 {

@@ -25,7 +25,7 @@ function UserComp(props) {
 				{firstLetter}
 			</button>
 			<div
-				className={`${classes.menu} dropdown-menu dropdown-menu-right border-0`}
+				className={`${classes.menu} dropdown-menu dropdown-menu-right`}
 			>
 				<h4>{name}</h4>
 				<h5>
@@ -37,9 +37,14 @@ function UserComp(props) {
 				<h5>
 					<small>Profil</small>
 				</h5>
-				<h5>
-					<button onClick={props.onClick}>Logout</button>
-				</h5>
+				<div>
+					<button
+						className='btn justify-content-center shadow-none'
+						onClick={props.onClick}
+					>
+						Logout
+					</button>
+				</div>
 			</div>
 		</div>
 	);
